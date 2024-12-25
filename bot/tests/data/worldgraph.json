@@ -1,0 +1,114 @@
+{
+    "m_edges": {
+        "m_values": {
+            "Array": [
+                {
+                    "m_values": {
+                        "Array": [
+                            {
+                                "m_from": {
+                                    "m_mapId": 189793795,
+                                    "m_zoneId": 1,
+                                    "m_uid": 1857
+                                },
+                                "m_to": {
+                                    "m_mapId": 189794307,
+                                    "m_zoneId": 1,
+                                    "m_uid": 1856
+                                },
+                                "m_transitions": {
+                                    "Array": [
+                                        {
+                                            "m_type": 1,
+                                            "m_direction": 0,
+                                            "m_skillId": -1,
+                                            "m_criterion": "",
+                                            "m_transitionMapId": 189794307,
+                                            "m_cellId": 293,
+                                            "m_id": -1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "m_from": {
+                                    "m_mapId": 189793795,
+                                    "m_zoneId": 1,
+                                    "m_uid": 1857
+                                },
+                                "m_to": {
+                                    "m_mapId": 189793794,
+                                    "m_zoneId": 1,
+                                    "m_uid": 4398
+                                },
+                                "m_transitions": {
+                                    "Array": [
+                                        {
+                                            "m_type": 1,
+                                            "m_direction": 6,
+                                            "m_skillId": -1,
+                                            "m_criterion": "",
+                                            "m_transitionMapId": 189793794,
+                                            "m_cellId": 9,
+                                            "m_id": -1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "m_from": {
+                                    "m_mapId": 189793795,
+                                    "m_zoneId": 1,
+                                    "m_uid": 1857
+                                },
+                                "m_to": {
+                                    "m_mapId": 189793283,
+                                    "m_zoneId": 1,
+                                    "m_uid": 3427
+                                },
+                                "m_transitions": {
+                                    "Array": [
+                                        {
+                                            "m_type": 1,
+                                            "m_direction": 4,
+                                            "m_skillId": -1,
+                                            "m_criterion": "",
+                                            "m_transitionMapId": 189793283,
+                                            "m_cellId": 336,
+                                            "m_id": -1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "m_from": {
+                                    "m_mapId": 189793795,
+                                    "m_zoneId": 1,
+                                    "m_uid": 1857
+                                },
+                                "m_to": {
+                                    "m_mapId": 189793796,
+                                    "m_zoneId": 1,
+                                    "m_uid": 4099
+                                },
+                                "m_transitions": {
+                                    "Array": [
+                                        {
+                                            "m_type": 1,
+                                            "m_direction": 2,
+                                            "m_skillId": -1,
+                                            "m_criterion": "",
+                                            "m_transitionMapId": 189793796,
+                                            "m_cellId": 539,
+                                            "m_id": -1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
