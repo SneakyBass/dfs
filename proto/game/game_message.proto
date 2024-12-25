@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+
+option go_package = "protocol/game";
+package com.ankama.dofus.server.game.protocol;
+
+message GameMessage {
+	oneof content {
+		.com.ankama.dofus.server.game.protocol.Request request = 1;
+		.com.ankama.dofus.server.game.protocol.Response response = 2;
+		.com.ankama.dofus.server.game.protocol.Event event = 3;
+	}
+}
+
+message Request {
+	int32 uid = 1;
+	.google.protobuf.Any content = 2;
+}
+
+message Response {
+	int32 uid = 1;
+	.google.protobuf.Any content = 2;
+}
+
+message Event {
+	.google.protobuf.Any content = 1;
+}
+

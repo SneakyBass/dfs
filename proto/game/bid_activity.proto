@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "common.proto";
+
+option go_package = "protocol/game";
+package com.ankama.dofus.server.game.protocol.common;
+
+message BidActivitiesRequest {
+}
+
+message BidActivityResponse {
+	repeated .com.ankama.dofus.server.game.protocol.common.BidActivity bid_activities = 1;
+}
+
+message BidActivity {
+	int32 bidId = 1;
+	.com.ankama.dofus.server.game.protocol.common.BidActivity.Type type = 2;
+	string created_at = 3;
+	.com.ankama.dofus.server.game.protocol.common.ItemMinimalInformation object = 4;
+	int64 price = 5;
+	enum Type {
+		SELL = 0;
+		BUY = 1;
+		EXPIRE = 2;
+	}
+
+}
+

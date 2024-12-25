@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option go_package = "protocol/game";
+package com.ankama.dofus.server.game.protocol.symbiont;
+
+enum MimicryResult {
+	ERROR = 0;
+	PLAYER_BUSY = 1;
+	HOST_NOT_MIMICKABLE = 2;
+	HOST_WRAPPED = 3;
+	DUPLICATE = 4;
+	SUCCESS = 5;
+}
+
+message WrapperObjectDissociateRequest {
+	int32 host_uid = 1;
+	int32 host_position = 2;
+}
+
+message MimicryRequest {
+	int32 symbiont_uid = 1;
+	int32 host_uid = 2;
+}
+
+message MimicryResponse {
+	.com.ankama.dofus.server.game.protocol.symbiont.MimicryResult result = 1;
+}
+
+message MimicryFreeRequest {
+	int32 host_uid = 1;
+}
+
+message MimicryFreeResponse {
+	.com.ankama.dofus.server.game.protocol.symbiont.MimicryResult result = 1;
+}
+

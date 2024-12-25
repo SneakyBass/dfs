@@ -1,0 +1,132 @@
+syntax = "proto3";
+
+import "common.proto";
+import "character_management.proto";
+
+option go_package = "protocol/game";
+package com.ankama.dofus.server.game.protocol.cosmetic;
+
+message CharacterAppearancesRequest {
+}
+
+message CharacterAppearancesResponse {
+	.com.ankama.dofus.server.game.protocol.cosmetic.CharacterFaces character_faces = 1;
+	.com.ankama.dofus.server.game.protocol.cosmetic.CharacterColors character_colors = 2;
+}
+
+message CharacterAppearanceCollectionEvent {
+	.com.ankama.dofus.server.game.protocol.cosmetic.CharacterFaces character_faces = 1;
+	.com.ankama.dofus.server.game.protocol.cosmetic.CharacterColors character_colors = 2;
+}
+
+message CharacterFaces {
+	int32 slots = 1;
+	repeated int32 faces = 2;
+	int32 max_slots = 3;
+}
+
+message CharacterColors {
+	int32 slots = 1;
+	repeated .com.ankama.dofus.server.game.protocol.cosmetic.ColorPalette color_palettes = 2;
+	int32 max_slots = 3;
+}
+
+message ColorPalette {
+	repeated int32 colors = 1;
+}
+
+message CharacterFillSlotFaceRequest {
+	int32 face = 1;
+}
+
+message CharacterFillSlotFaceResponse {
+	oneof Result {
+		.com.ankama.dofus.server.game.protocol.cosmetic.CharacterFillSlotFaceResponse.Success success = 1;
+		.com.ankama.dofus.server.game.protocol.cosmetic.CharacterFillSlotFaceResponse.Error error = 2;
+	}
+	message Success {
+		int32 faceId = 1;
+		int32 position = 2;
+	}
+
+	message Error {
+	}
+
+}
+
+message CharacterFillSlotColorsRequest {
+	repeated int32 colors = 1;
+}
+
+message CharacterFillSlotColorsResponse {
+	oneof Result {
+		.com.ankama.dofus.server.game.protocol.cosmetic.CharacterFillSlotColorsResponse.Success success = 1;
+		.com.ankama.dofus.server.game.protocol.cosmetic.CharacterFillSlotColorsResponse.Error error = 2;
+	}
+	message Success {
+		repeated int32 colors = 1;
+		int32 position = 2;
+	}
+
+	message Error {
+	}
+
+}
+
+message CharacterUpdateFaceRequest {
+	int32 face_id = 1;
+	int32 slot = 2;
+}
+
+message CharacterFaceUpdatedEvent {
+	int32 face_id = 1;
+	int32 slot = 2;
+}
+
+message CharacterUpdateColorsRequest {
+	repeated int32 colors = 1;
+	int32 slot = 2;
+}
+
+message CharacterColorsUpdatedEvent {
+	repeated int32 colors = 1;
+	int32 slot = 2;
+}
+
+message CharacterUpdateGenderRequest {
+	.com.ankama.dofus.server.game.protocol.common.Gender gender = 1;
+	int32 cosmetic_id = 2;
+	repeated int32 colors = 3;
+	string name = 4;
+}
+
+message CharacterUpdatedGenderEvent {
+	string name = 1;
+	.com.ankama.dofus.server.game.protocol.common.Gender gender = 2;
+	.com.ankama.dofus.server.game.protocol.common.EntityLook look = 3;
+}
+
+message CharacterUpdateBreedRequest {
+	int32 breed_id = 1;
+	.com.ankama.dofus.server.game.protocol.common.Gender gender = 2;
+	repeated int32 colors = 3;
+	int32 cosmetic_id = 4;
+	string name = 5;
+}
+
+message CharacterUpdatedBreedEvent {
+	string name = 1;
+	int32 breed_id = 2;
+	.com.ankama.dofus.server.game.protocol.common.Gender gender = 3;
+	.com.ankama.dofus.server.game.protocol.common.EntityLook look = 4;
+}
+
+message CharacterRenameRequest {
+	string name = 1;
+}
+
+message CharacterUpdatedNameEvent {
+	string name = 1;
+	.com.ankama.dofus.server.game.protocol.character.management.NameCompliance detail = 2;
+}
+

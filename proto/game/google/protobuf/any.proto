@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option go_package = "protocol/connection";
+package google.protobuf;
+
+message Any {
+	string type_url = 1;
+	bytes value = 2;
+}
+

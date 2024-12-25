@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option go_package = "protocol/game";
+package com.ankama.dofus.server.game.protocol.document;
+
+message DocumentReadingBeginEvent {
+	int32 document_id = 1;
+}
+
+message OpenGuideBookEvent {
+	int32 article_id = 1;
+}
+
