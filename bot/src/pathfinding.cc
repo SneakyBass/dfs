@@ -113,7 +113,7 @@ namespace dfs
         auto &a = m_Cells->at(cell_a);
         auto &b = m_Cells->at(cell_b);
 
-        auto diff = std::abs(a.Floor) - std::abs(b.Floor);
+        auto diff = std::abs(std::abs(a.Floor) - std::abs(b.Floor));
 
         return a.MoveZone != b.MoveZone && diff == 0;
     }
@@ -233,7 +233,7 @@ namespace dfs
 
             if (mov && use_new_system && previous != -1 && previous != cell_id) {
                 auto &previous_cell = m_Cells->at(previous);
-                diff = std::abs(cell.Floor) - std::abs(previous_cell.Floor);
+                diff = std::abs(std::abs(cell.Floor) - std::abs(previous_cell.Floor));
 
                 if ((previous_cell.MoveZone != cell.MoveZone && diff > 0)
                     || (previous_cell.MoveZone == cell.MoveZone && cell.MoveZone == 0 && diff > TOLERANCE_ELEVATION)) {
